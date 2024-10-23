@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.header{
+    text-align: center;
+    padding: 20px 0;
+    /* pour faire un trait horizontale (solid= pour le trait */
+    border-bottom: 2px solid orangered;
+    background-color: black;
+}
+nav ul{
+    /* pour enlever les pointer */
+    list-style-type: none;
+    /* pour centrer le texte en orizontale et a chaque fois qu'on mets display flex 
+    on r'ajoute justify content*/
+    display: flex;
+    justify-content: center;
+}
+nav ul li a{
+    /* pour enlever les soulignement */
+    text-decoration: none;
+    padding: 11px 21px;
+    position: relative;
+    /* pour faire une animation */
+    transition: 0.3s ease-in-out;
+}
+/* pour confirmer l'animation qu'on a fait au dessus */
+nav ul li a:hover{
+    color: orangered;
+}
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 3px;
+    background-color: orangered;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+/* Fin header */
+.section{
+    display: flex;
+   /* pour que le texte soit au meme niveau que l'image */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+}
+.texte{
+    width: 100%;
+    padding-right: 21px;
+}
+.texte h1{
+    font-size: 3rem;
+    margin-bottom: 21px;
+}
+span{
+    color: orangered;
+}
+.texte p{
+    font-size: 1.1rem;
+    margin-bottom: 21px;
+}
+.texte .btn{
+    background-color: orangered;
+    color: white;
+    padding: 10px 21px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+.texte .btn:hover{
+    background-color: green;
+}
+.image{
+    width: 70%;
+    text-align: center;
+    margin-left: 40%;
+}
+.image img{
+    max-width: 100%;
+    height: 40rem;
+    background-color: orangered;
+    border-top-left-radius: 22rem;
+    border-bottom-right-radius: 22rem;
+}
+h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: orangered;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.comp{
+    display: flex;
+    justify-content: center;
+    /* pour que les cadre ne se colle pas */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: orangered;
+    border-radius: 11px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 2px 4px 10px ;
+    background-color: black;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 1rem;
+}
+i{
+    color: orangered;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+h3{
+    color: orangered;
+    margin-bottom: 12px;
+}
+.btn2{
+    background-color: orangered;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 12px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.card:hover{
+    background-color: rgb(22, 41, 2);
+    transform: scale(1.05);
+}
+.gallery{
+    display: grid;
+    /* pour mettre des colonne */
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) ;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin-left: -1rem;
+}
+.album{
+    position: relative;
+    /* pour eliminer tous les debordement */
+    overflow: hidden;
+    border-radius: 11px;
+    box-shadow: 2px 4px 11px orangered
+}
+.album img{
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+.info{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    /* justify-content est toujours suivit de align-items */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0.5;
+    color: white;
+}
+.info h3,.info p{
+    color: white;
+    margin: 10px 0;
+}
+.album:hover img{
+    transform: scale(1.3);
+}
+.album:hover .info{
+    opacity: 0.8;
+    background-color: rgb(22, 41, 2);
+}
+.contact{
+    display: flex;
+    height: 65vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.address{
+    overflow: hidden;
+    flex: 1;
+}
+.formulaire{
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 2px 4px 10px orangered;
+}
+label{
+    display: block;
+    color: black;
+    /* pour ajouter un peu plus de gras au ecriture */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+input,textarea{
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid orangered;
+}
+form button{
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: orangered;
+}
+.footer{
+    background-color: black;
+    margin-top: 3rem;
+    color: white;
+    padding: 20px;
+    /* apres display flex on ajoute toujours flex wrap */
+    display: flex;
+    /* pour mettre de l'espace l'un a droite et l'autre a gauche */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tel i{
+    margin-right: 10px;
+    color: orangered;
+}
+.social{
+    display: flex;
+    gap: 15px;
+}
+.social i{
+    color: white;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.social i:hover{
+    color: orangered;
+}
+@media (max-width:1024) {
+    .section{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .texte h1{
+        font-size: 2.5rem;
+    }
+    .texte p{
+        font-size: 1rem;
+    }
+    .image{
+        width: 100%;
+    }
+    .image img{
+        height: auto;
+    }
+    .gallery{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    }
+}
+@media (max-width:760px) {
+    nav ul{
+        flex-direction: column;
+        padding: 10px;
+    }
+    nav ul li{
+        margin-bottom: 10px;
+    }
+    .section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .texte h1{
+        font-size: 2rem;
+
+    }
+    .texte p{
+        font-size: 0.8rem;
+    }
+    .texte .btn{
+        padding: 10px 20px;
+    }
+    .image img{
+        height: auto;
+    }
+    .comp{
+        flex-direction: column;
+    }
+    .card{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .footer{
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer .tel, .footer .social{
+        margin-bottom: 20px;
+    }
+    .social{
+        justify-content: center;
+    }
+}
+@media (max-width:480px) {
+    .texte h1{
+        font-size: 1.5rem;
+    }
+    .texte p{
+        font-size: 0.7rem;
+    }
+    .texte .btn{
+        padding: 9px 16px;
+    }
+    .image img{
+        height: auto;
+        width: 100%;
+    }
+    .contact{
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+    .formulaire{
+        padding: 20px;
+        
+    }
+}
